@@ -175,12 +175,14 @@ alias glpo='command git log --graph -p --oneline'
 alias sysadmin='ssh -i ~/.ssh/id_vms -l sysadmin'
 alias git-clean-all='git reset --hard; git clean -fd; git submodule foreach "git reset --hard; git clean -fd"'
 alias gsu='command git submodule update --init --recursive'
-alias gshow='command git show -p --submodule=diff'
+alias gshow='command git show -p --submodule=diff --stat'
 alias ghash='command git --no-pager log -1 --pretty=format:"%C(bold)$(gns)@%h%C(reset) %C(#ff69b4)%H %C(#34e2e2)%s%n%C(reset)"'
 alias code='code -g'
 alias get-windows-path='f() { echo "Z:$(realpath "${1:-.}" | sed "s|/|\\\\|g")"; }; f'
 alias gns='command git config --get remote.origin.url | sed -E "s/^(git@|https?:\/\/)[^/:]*[/:](.*)\.git$/\2/"'
 alias gdc='command git diff --cached'
+alias gpsu='command git pull && command git submodule update --init --recursive'
+alias gtrack='git-tracking'
 
 # User functions
 
